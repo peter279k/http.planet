@@ -1,14 +1,14 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "name": "peter279k/http.planet",
+    "description": "HTTP Status Planets API",
+    "keywords": ["HTTP", "Planets", "API", "Status"],
+    "homepage": "http://github.com/peter279k/http.planet",
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "peter279k",
+            "email": "peter279k@gmail.com",
+            "homepage": "https://peterweb-uploadspace.rhcloud.com"
         }
     ],
     "require": {
