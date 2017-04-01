@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+        <?php if(isset($statusCode)) { ?>
+            <?php echo '<img src="/'.htmlspecialchars("images/".$statusCode.".jpg").'" width="620" height="496" />'; ?>
+        <?php } ?>
+    </body>
+</html>

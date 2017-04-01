@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="peter279k">
+        <meta name="description" content="An API for the awesome HTTP Planets! Use it in your website to show funny error messages.">
+        <meta name="keywords" content="httpplanets, planets, error, http, lolplanets">
+        <meta property="og:title" content="HTTP Status Planets API">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://httpplanets.tw">
+        <meta property="og:image" content="https://httpplanets.tw/images/100.jpg">
+        <meta property="og:site_name" content="HTTP Status Planets API">
+        <meta property="og:description" content="API for HTTP Planets">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="https://httpplanets.tw">
+        <meta name="twitter:creator" content="@peter279k">
+        <meta name="twitter:title" content="HTTP Planets API">
+        <meta name="twitter:description" content="API for HTTP Planets">
+        <meta name="twitter:image" content="https://httpplanets.tw/100">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="images/favicon.ico" rel="shortcut icon" type="image/ico">
+        <title>HTTP Status Planets API</title>
+        <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <style>h1{font-weight:700;font-size:350%}li,ul{list-style-type:none}ul a:hover{text-decoration:none}li{width:auto;padding:1em;border:1px solid #333;border-radius:5px;background-position:65% 30%;margin-bottom:1em}li:hover{background-position:66% 31%}li span{padding:.1em;background-color:rgba(0,0,0,.7);border-radius:.1em;color:#fff;font-size:200%;text-shadow:1px 1px 1px #333}.top-space{margin-top:2em}.bottom-space{margin-bottom:2em}</style>
+    </head>
+    <body>
+       <div class="container">
+           <header class="bottom-space">
+               <h1>HTTP Status Planets API</h1>
+            </header>
+            <h2 class="top-space">
+                <?php
+                    if(isset($usage)) {
+                        echo $usage;
+                    } else {
+                        echo 'Usage: ';
+                    }
+                ?>
+            </h2>
+            <pre>https://httpplanets.tw/[status_code]</pre>
+            <?php
+                if(empty($note)) {
+                    echo '<p><b>Note:</b> If you need for some reason to use an image extension, add <code>/images/.jpg</code> to the URL.</p>';
+                } else {
+                    echo $note;
+                }
+                if(empty($code)) {
+                    echo '<h2 class="top-space bottom-space">Available status codes:</h2>';
+                } else {
+                    echo $code;
+                }
+            ?>
+            <?php
+                if (isset($codeContent)) {
+                    echo $codeContent;
+                }
+            ?>
+            <div class="clearfix"></div>
+            <footer class="text-center bottom-space">
+                <div class="links top-space bottom-space">
+                    <?php
+                        if(empty($lang)) {
+                            echo '<p><a href="/chinese">中文</a></p>';
+                        } else {
+                            echo $lang;
+                        }
+                        if(empty($apod)) {
+                            echo '<p><a href="https://apod.nasa.gov/apod/">Today\'s APOD image</a></p>';
+                        } else {
+                            echo $apod;
+                        }
+                    ?>
+                </div>
+                <?php
+                    if(empty($develop)) {
+                        echo '<p>Developed by <a href="https://twitter.com/peter279k">@peter279k</a>. <a href="https://api.nasa.gov/index.html">Images</a> is provided by NASA Open API (<a href="https://api.nasa.gov/index.html">APOD API</a>).</p>';
+                    } else {
+                        echo $develop;
+                    }
+                ?>
+            </footer>
+        </div>
+    </body>
+</html>
